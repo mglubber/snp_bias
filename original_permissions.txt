@@ -1,0 +1,37 @@
+# snapshot of permissions on file as of 14/06/2016 - record of who created what
+# scripts/data before reorganizing/improving scripts for reanalysis
+total 1.3G
+-rwxrwxr-x 1 markl    markl    7.4M Nov 17  2015 all_alu_by_family.txt
+-rwxrwxrwx 1 hbandukw hbandukw 978M Nov 23  2015 allsnpsmodified
+-rw-rw-r-- 1 markl    markl    6.8K Nov 23  2015 alu_chrom_list
+-rw-rw-r-- 1 markl    markl    160M Jun  9 17:27 alu_data_extended.txt
+-rwxrwxrwx 1 markl    markl     111 Nov 17  2015 ALU_genomic_ranges.R
+-rw-rw-r-- 1 markl    markl     52M Nov 23  2015 alu_locations.txt
+-rw-rw-r-- 1 markl    markl     65M Nov 28  2015 alu_positions.tab
+-rw-rw-r-- 1 markl    markl     11K Nov 23  2015 alu_stats.txt
+-rwxrwxrwx 1 markl    markl     587 Dec  4  2015 create_snp_ranges.R
+drwxrwxrwx 2 markl    markl    4.0K Jun 14 14:36 data
+-rw-rw-r-- 1 markl    markl       0 Nov 28  2015 distance_sorted_file
+-rw-rw-r-- 1 hbandukw hbandukw  16M Nov 28  2015 distance_vs_family_file
+-rwxrwxr-x 1 markl    markl    1.6K Dec  4  2015 downstream_snp_dist_no_overlap.R
+-rwxrwxrwx 1 hbandukw hbandukw 1.7K Dec 11  2015 downstream_snp_dist.R
+drwxrwxr-x 2 markl    markl    4.0K Jun 14 14:30 figures_old
+-rwxrwxr-x 1 markl    markl     103 Jun  9 17:28 get_Alu_data.sh
+-rwxrwxr-x 1 markl    markl     381 Nov 28  2015 get_Alu_position.sh
+-rwxrwxrwx 1 markl    markl     120 Nov 17  2015 get_raw_hg38_repeats.sh
+-rwxrwxr-x 1 markl    markl      85 Jun  9 17:36 get_snps_mod_count.sh
+-rwxrwxr-x 1 markl    markl      79 Jun  9 17:38 get_snps_type_count.sh
+-rw-rw-r-- 1 markl    markl       0 Jun 14 14:39 original_permissions.txt
+-rw-rw-r-- 1 markl    markl    6.0K Nov 23  2015 snp_chrom_list
+-rw-rw-r-- 1 markl    markl     150 Nov 28  2015 snp_distance_histogram.R
+-rw-rw-r-- 1 hbandukw hbandukw 143K Dec  3  2015 snp_freq_within_300.R
+-rw-rw-r-- 1 hbandukw hbandukw 1.5K Dec  3  2015 snp_freq_within.R
+-rw-rw-r-- 1 hbandukw hbandukw 1.5K Dec  3  2015 snp_freq_within.R~
+-rw-rw-r-- 1 markl    markl     30M Nov 27  2015 snp_lengths.txt
+-rw-rw-r-- 1 markl    markl    3.7M Jun  9 17:32 snps_mods_count
+-rw-rw-r-- 1 markl    markl    1.3K Dec 11  2015 SNP_stats_table
+-rw-rw-r-- 1 markl    markl     236 Jun  9 17:37 snps_type_count
+-rwxrwxrwx 1 hbandukw hbandukw  275 Nov 15  2015 testsed
+-rw-rw-r-- 1 markl    markl    1.7K Dec  3  2015 this_is_probably_important.R
+-rw-rw-r-- 1 markl    markl    1.6K Dec  4  2015 upstream_snp_dist_no_overlap.R
+-rwxrwxrwx 1 hbandukw hbandukw 1.7K Dec  4  2015 upstream_snp_dist.R

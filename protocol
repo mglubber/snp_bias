@@ -1,0 +1,74 @@
+This is an outline of the different scripts, their function, and the order they
+are run in to produce the final data
+
+1) Get raw hg38 data to determine Alu positions using repeat masker. hg38
+includes alt and unknown/unplaced chromosomes (listed as chr#_ID_alt). 
+
+> scripts/get_raw_hg38_repeats.sh
+
+output: hg38.fa.* set of files
+
+To Do: 
+modify script to only download required files (hg38.fa.out?) instead of full set
+modify script to set location/filenames on download
+
+2) Filter for hg38 repeats for Alu elements, their chromosome and position, 
+name, strand, and overlap positions with consensus sequence.
+
+> scripts/get_alu_data.sh hg38.fa.out
+
+output: alu_positions.tab, tabular file with the above data, and headers
+
+To Do:
+modify script to allow piping output into next command/naming of output file
+double check header names for consistency with RepeatMasker output format
+modify script to use tr instead of complicated sed command for whitespace?
+get rid of tail -n+4?
+modify script to allow output of different types of repeats?
+
+3) get raw snps data from ?
+
+> ? 
+
+output: allsnps, list of all *common* snps in human genome, including chrom,
+start and end position, name, strand, reference NCBI and UCSC base at that
+position, observed polymorphism, change type, and type of gene/position it
+occurs in (i.e. intron, ncRNA, etc)
+
+To Do:
+determine source of data
+write script to get? May be hard, was browser based bc UCSC browser stupidity
+
+4) extract important SNP data
+
+> ? - some sed command
+
+output: allsnspmodified, tab file with chrom, start and end position, name,
+strand, reference base, modification, and class of polymorphism (single,
+insertion, deletion, etc)
+
+To Do:
+determine sed command
+modify to only collect genomic singles, or to split genomic singles/indels, etc
+into multiple files for different analysis?
+
+5) create genomic ranges in R for determining overlaps
+
+> R
+> source('create_snp_ranges.R')
+
+output: set of genomic ranges for ALU elements (all, positive strand, and 
+negative strand), and for SNPs in R.
+
+To Do:
+Verify postive strand/negative strand necessary
+   determine there is an easier way to split
+check if strand from SNPs is causing issue for determining overlaps in opposite
+strand alu elements
+modify script to allow calling file names of SNPs/Alu element location files 
+modify GRanges to hold more additional info
+   consensus overlap info?
+   repeat type
+   SNP "type"
+
+
