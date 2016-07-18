@@ -20,11 +20,11 @@ name, strand, and overlap positions with consensus sequence.
 output: alu_positions.tab, tabular file with the above data, and headers
 
 To Do:
-modify script to allow piping output into next command/naming of output file
-double check header names for consistency with RepeatMasker output format
-modify script to use tr instead of complicated sed command for whitespace?
-get rid of tail -n+4?
-modify script to allow output of different types of repeats?
+modify script to allow piping output into next command/naming of output file - Done
+double check header names for consistency with RepeatMasker output format - Done
+modify script to use tr instead of complicated sed command for whitespace? - No
+get rid of tail -n+4? - Done
+modify script to allow output of different types of repeats? - Done, can filter for arbitrary pattern
 
 3) get raw snps data from ?
 
@@ -52,7 +52,11 @@ determine sed command
 modify to only collect genomic singles, or to split genomic singles/indels, etc
 into multiple files for different analysis?
 
-5) create genomic ranges in R for determining overlaps
+5) Install Bioconductor/Genomic Ranges
+> R
+> source('https://bioconductor.org/biocLite.R')
+> biocLite('Genomic Ranges')
+6) create genomic ranges in R for determining overlaps
 
 > R
 > source('create_snp_ranges.R')
