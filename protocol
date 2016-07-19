@@ -75,4 +75,4 @@ modify GRanges to hold more additional info
    repeat type
    SNP "type"
 
-
+Deal with broken Alu element issue
