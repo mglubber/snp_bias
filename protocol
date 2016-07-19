@@ -71,8 +71,22 @@ check if strand from SNPs is causing issue for determining overlaps in opposite
 strand alu elements
 modify script to allow calling file names of SNPs/Alu element location files 
 modify GRanges to hold more additional info
-   consensus overlap info?
-   repeat type
-   SNP "type"
+   consensus overlap info - Done
+   repeat type - Done
+   SNP "type" - Done
 
-Deal with broken Alu element issue
+Deal with broken Alu element issue: multiple Alu elements with same ID number,
+does not appear to always be based on fragmenting/split of one repeat into
+multiple portions - one segment of Alu can be repeated multiple times, e.g.:
+chrX:1142196-1144230 contains nine fragments of the same 30-31 bp portion of
+an aluY fragment. Breakdown of fragments is:
+#_of_alus #_of_pieces
+2	9
+2	5
+48	4
+1156	3
+37369	2
+1160569	1
+
+Can likely just remove from analysis, as they only represent ~3% of total Alu 
+elements. 
