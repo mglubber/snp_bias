@@ -56,6 +56,7 @@ into multiple files for different analysis?
 > R
 > source('https://bioconductor.org/biocLite.R')
 > biocLite('Genomic Ranges')
+
 6) create genomic ranges in R for determining overlaps
 
 > R
@@ -75,6 +76,20 @@ modify GRanges to hold more additional info
    repeat type - Done
    SNP "type" - Done
 
+7) Run load downstream distance function
+
+> source('downstream_snp_dist_function.R')
+
+output: function that finds downstream distance for both + and - strand alus. Also provides
+function get_flank_distances, which can find downstream (not all) distances to
+the 3' end of the repeat. Pass granges of query elements, which should be downstream
+of the granges of subject elements, plus flank distance and offset into the query
+range. Currently upstream can be set to false, may adjust later. will handle both 
+positive and negative strands. returns list of 3 tables, distance_vs_family, positive_distance
+and negative_distance. Last two included for error checking, will likely remove later.
+
+Notes:
+
 Deal with broken Alu element issue: multiple Alu elements with same ID number,
 does not appear to always be based on fragmenting/split of one repeat into
 multiple portions - one segment of Alu can be repeated multiple times, e.g.:
@@ -89,4 +104,4 @@ an aluY fragment. Breakdown of fragments is:
 1160569	1
 
 Can likely just remove from analysis, as they only represent ~3% of total Alu 
-elements. 
+elements. Running scripts after removing duplicates doesn't seem to affect anything.
