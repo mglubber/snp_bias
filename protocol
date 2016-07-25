@@ -66,27 +66,28 @@ output: set of genomic ranges for ALU elements (all, positive strand, and
 negative strand), and for SNPs in R.
 
 To Do:
-Verify postive strand/negative strand necessary
-   determine there is an easier way to split
+Verify postive strand/negative strand necessary - No
+   determine there is an easier way to split - unnecessary
 check if strand from SNPs is causing issue for determining overlaps in opposite
-strand alu elements
-modify script to allow calling file names of SNPs/Alu element location files 
+strand alu elements- doesn't appear to be
+modify script to allow calling file names of SNPs/Alu element location files
 modify GRanges to hold more additional info
    consensus overlap info - Done
    repeat type - Done
    SNP "type" - Done
 
-7) Run load downstream distance function
+7) overlap_distance_functions.R
 
-> source('downstream_snp_dist_function.R')
+> source('overlap_distance_functions.R')
 
-output: function that finds downstream distance for both + and - strand alus. Also provides
-function get_flank_distances, which can find downstream (not all) distances to
-the 3' end of the repeat. Pass granges of query elements, which should be downstream
-of the granges of subject elements, plus flank distance and offset into the query
-range. Currently upstream can be set to false, may adjust later. will handle both 
-positive and negative strands. returns list of 3 tables, distance_vs_family, positive_distance
-and negative_distance. Last two included for error checking, will likely remove later.
+function that finds distance for both + and - strand repeat elements, upstream
+or downstream depending on choice. Uses granges of query elements, which should
+be SNPs/mutations and granges of subject elements, plus flank distance and 
+offset into the subject range. Returns data_frame containing repeat family,
+strand, start and end position; query name, start and end position, class, 
+moltype and observed mutation, and the distance from the closest of the start
+and end positions pairs. Negative distance indicates that the query falls within
+the subject.
 
 Notes:
 
